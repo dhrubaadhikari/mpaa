@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "rei-list-view-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reiListView/ReiListViewWebPart.js",
+          "manifest": "./src/webparts/reiListView/ReiListViewWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReiListViewWebPartStrings": "lib/webparts/reiListView/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "rei-calendar-listview-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reiCalendarListview/ReiCalendarListviewWebPart.js",
+          "manifest": "./src/webparts/reiCalendarListview/ReiCalendarListviewWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReiCalendarListviewWebPartStrings": "lib/webparts/reiCalendarListview/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

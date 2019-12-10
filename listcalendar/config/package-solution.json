@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "listcalendar-client-side-solution",
+    "id": "86dc5529-2591-4ab4-80b5-b7343c93f1ef",
+    "version": "1.0.2.6",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/listcalendar.sppkg"
+  }
+}
