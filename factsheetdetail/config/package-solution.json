@@ -3,7 +3,7 @@
   "solution": {
     "name": "factsheetdetail-client-side-solution",
     "id": "7cef7e40-ffb4-433e-90df-7772aef3b99c",
-    "version": "1.0.0.5",
+    "version": "1.0.0.6",
     "includeClientSideAssets": true,
     "isDomainIsolated": false
   },
