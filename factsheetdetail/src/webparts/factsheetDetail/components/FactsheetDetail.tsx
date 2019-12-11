@@ -8,7 +8,7 @@ const editicons: any = require('../images/edit_icon.png');
 const printicon: any = require('../images/print_icon.png');
 const downicon: any = require('../images/down_icon.png');
 const leftfactlabels = {
-  "min-width": "50px",
+  "width": "150px",
   //"min-width": "220px",
   //"padding": "15px",
   "padding": "5px 10px",
@@ -20,6 +20,7 @@ const leftfactlabels = {
   "border-right-width": "2px",
   "border-right-style": "solid",
   "border-color": "#aaa",
+  "vertical-align":"middle",
   "text-align": "left !important"
 } as React.CSSProperties;
 
