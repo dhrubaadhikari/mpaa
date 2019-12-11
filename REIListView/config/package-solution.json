@@ -3,7 +3,7 @@
   "solution": {
     "name": "reilistview-client-side-solution",
     "id": "cdd04544-131d-4328-a821-2e09233f2db6",
-    "version": "1.0.0.6",
+    "version": "1.0.0.7",
     "includeClientSideAssets": true,
     "isDomainIsolated": false
   },

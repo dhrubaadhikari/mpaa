@@ -65,8 +65,39 @@ export default class ReiListView extends React.Component<IReiListViewProps, any>
     this.orFilters = orFilters.map(n => new myFilter(n));
   }
 
+  public SortDefault(items) {
+    for (var i = 0; i < this.viewConfig.length; i++) {
+      var item = this.viewConfig[i];
+      if (item["defaultSort"]) {
+        if (item["isDate"]) {
+          items.sort(function (a, b) {
+            a = new Date(a[item["name"]]);
+            b = new Date(b[item["name"]]);
+            if (item["defaultSort"] == "Desc")
+              return a > b ? -1 : 1;
+            else
+              return a > b ? 1 : -1;
+          });
+        }
+        else {
+          items.sort(function (a, b) {
+            a = (a[item["name"]]).toLowerCase();
+            b = (b[item["name"]]).toLowerCase();
+            if (item["defaultSort"] == "Desc")
+              return a > b ? -1 : 1;
+            else
+              return a > b ? 1 : -1;
+          });
+        }
+        return items;
+      }
+    }
+    return items;
+  }
+
   public SearchItems(items) {
-    return items.filter(n => this.passFilter(n));
+    var res = this.SortDefault(items);
+    return res.filter(n => this.passFilter(n));
   }
 
   public passFilter(item) {
