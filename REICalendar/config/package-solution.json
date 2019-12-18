@@ -3,7 +3,7 @@
   "solution": {
     "name": "reicalendar-client-side-solution",
     "id": "dbecc9ba-5e33-41ca-ae7e-810606234ca7",
-    "version": "1.0.0.4",
+    "version": "1.0.0.5",
     "includeClientSideAssets": true,
     "isDomainIsolated": false
   },

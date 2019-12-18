@@ -67,7 +67,7 @@ export default class Reicalendar extends React.Component<IReicalendarProps, any>
       </span>
     )
   }
-  
+
   public EventAgenda({ event }) {
     return (
       <span>
@@ -107,7 +107,7 @@ export default class Reicalendar extends React.Component<IReicalendarProps, any>
         selectable
         events={this.state.data}
         views={allViews}
-        style={{ height: '500px'}}
+        style={{ height: '500px' }}
         step={60}
         showMultiDayTimes
         defaultDate={new Date()}
@@ -116,7 +116,7 @@ export default class Reicalendar extends React.Component<IReicalendarProps, any>
         onSelectSlot={ev => this.GoToNewItemUrl()}
         eventPropGetter={(this.eventStyleGetter)}
         components={{
-          event: this.Mevent,          
+          event: this.Mevent,
           timeSlotWrapper: ColoredDateCellWrapper,
           agenda: {
             event: this.EventAgenda,
@@ -127,11 +127,11 @@ export default class Reicalendar extends React.Component<IReicalendarProps, any>
   )
 
   public GoToNewItemUrl() {
-    window.open(this.props.SiteUrl + "/Lists/" + this.props.ListName + "/NewForm.aspx?Source="+window.location.href,'_self');
+    window.open(this.props.SiteUrl + "/Lists/" + this.props.ListName + "/NewForm.aspx?Source=" + window.location.href, '_self');
   }
 
   public GoToEditItemUrl(event) {
-    window.open(this.props.SiteUrl + "/Lists/" + this.props.ListName + "/DispForm.aspx?ID=" + event.id+"&Source="+window.location.href,'_self');
+    window.open(this.props.SiteUrl + "/Lists/" + this.props.ListName + "/DispForm.aspx?ID=" + event.id + "&Source=" + window.location.href, '_self');
   }
 
   public render(): React.ReactElement<IReicalendarProps> {
@@ -200,7 +200,7 @@ export default class Reicalendar extends React.Component<IReicalendarProps, any>
     // else if (data)
     //   this.setStateData(this.MapListItemToCalendarItem(data));
     // else
-      this.GetListItems();
+    this.GetListItems();
 
   }
 
@@ -275,32 +275,36 @@ export class myObj {
   private allDay: boolean;
   private color: string;
   private resource: any;
-  private mytag:string;
+  private mytag: string;
   constructor(arg, props: IReicalendarProps, myTags: Array<myTag>) {
     this.id = arg.ID,
-    this.start = new Date(arg[props.StartDate]);
-    this.end = new Date(arg[props.EndDate]);  
+      this.start = new Date(arg[props.StartDate]);
+    this.end = new Date(arg[props.EndDate]);
     this.color = "#90D7FF";
-    this.mytag="";
+    this.mytag = "";
     this.resource = arg;
     if (myTags) {
       for (var i = 0; i < myTags.length; i++) {
-        if (arg[myTags[i].fieldName] == myTags[i].value)
-        {
+        if (arg[myTags[i].fieldName] == myTags[i].value) {
           this.color = myTags[i].color;
-          this.mytag= myTags[i].value;
+          this.mytag = myTags[i].value;
         }
-          
+
       }
     }
-    this.title = arg[props.Title]+ "\n"+this.prettyDate2(this.end)+" "+this.mytag;     
     this.allDay = arg["fAllDayEvent"];
+
+    if (this.allDay)
+      this.title = arg[props.Title] + "\nAll Day, " + this.mytag;
+    else
+      this.title = arg[props.Title] + "\n" + this.prettyDate2(this.end) + ", " + this.mytag;
+
   }
 
   private prettyDate2(date) {
     return date.toLocaleTimeString(navigator.language, {
       hour: '2-digit',
-      minute:'2-digit'
+      minute: '2-digit'
     });
   }
 }
